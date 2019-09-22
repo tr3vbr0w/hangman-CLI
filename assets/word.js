@@ -2,6 +2,7 @@
 var letter = require('./letter.js');
 
 var wordArr = ['Timponogos','Mt Olympus', 'Lone Peak', 'Ninety-Nine Ninety', 'Jupiter Peak', 'Clayton Peak', 'Kessler Peak','Grandeur Peak', 'Mt Superior']
+
 //Initialize Word constructor
 
 var Word = function(wordArr) {
@@ -33,8 +34,12 @@ var Word = function(wordArr) {
             }
             
         }
-        
+        if (correct === true){
+            console.log('Correct!!\n');
+        }else {
+            console.log('Incorrect, Try Again!');
+            this.guesses--;          
+        }
     }
-
 }
-
+module.exports = Word;
