@@ -7,7 +7,7 @@ var Letter = require('./letter.js');
 var Word = function(newWord) {
     this.wordArr = newWord.split("");
     this.letterArr = [];
-    this.guesses = 12;
+    this.guesses = 5;
     //This segment of the constructor sets letterArr to break up the selected word into an array of letters, displaying either the guessed letter or the placeholder
     for (let i = 0; i < this.wordArr.length; i++) {
         var newLetter = new Letter(this.wordArr[i]);
@@ -33,8 +33,7 @@ var Word = function(newWord) {
 				}
             }
         }
-        console.log(correct);
-        
+        console.log(this.guesses)
 
         if (correct){
             console.log('Correct!!\n');

@@ -42,16 +42,14 @@ function play() {
 //Function catches scenarios where the user will win or lose and inform them of their game status
 function endGame(){
     if(currentWord.guesses > 0){
-        console.log('You guessed the word! You Win!!');
+        console.log('You guessed the word! You Win!!\n');
     }else{
-        console.log("No more guesses. Try Again");
+        
+        console.log("No more guesses. You Lose\n");
+        //This line of code is designed to remove the used word from the array so it is not selected twice
+        wordArr.splice(wordArr.indexOf(currentWordString),1);
     }
-    
-    //Remove used word from array
-    wordArr.splice(words.indexOf(currentWordString),1);
-    
-    //If all words are used and array is empty, reset array to default.
-    var wordArr = ['Timponogos','Mt Olympus', 'Lone Peak', 'Ninety-Nine Ninety', 'Jupiter Peak', 'Clayton Peak', 'Kessler Peak','Grandeur Peak', 'Mt Superior']
+  
     
     //Run newWord to restart game
     newWord();
