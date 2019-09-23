@@ -13,9 +13,10 @@ var Word = function(newWord) {
         var newLetter = new Letter(this.wordArr[i]);
         this.letterArr.push(newLetter);
     }
-    //This segment of the constructor sets 
+    //This segment of the constructor sets the variable word to be an empty string, then adds a new 
     this.returnWord = function(){
-        var word;
+        var word = "";
+
         for (let i = 0; i < this.letterArr.length; i++) {
             word += this.letterArr[i].returnLetter();
         }
@@ -24,20 +25,22 @@ var Word = function(newWord) {
     // Function checks guess against each letter in letterArr
     this.guess = function(input){
         var correct = false;
-        for (let i = 0; i < this.letterArr.length; i++) {
-            if(!this.letterArr[i].solved){
-                this.letterArr[i].guess(input);
-                if(this.letterArr[i].solved){
-                    correct = true;
-                }
+        for (var i = 0; i < this.letterArr.length; i++) {
+			if (!this.letterArr[i].exists) {
+				this.letterArr[i].guess(input);
+				if (this.letterArr[i].exists) {
+					correct = true;
+				}
             }
-            
         }
-        if (correct === true){
+        console.log(correct);
+        
+
+        if (correct){
             console.log('Correct!!\n');
         }else {
             console.log('Incorrect, Try Again!');
-            this.guesses--;          
+            this.guesses = this.guesses - 1;        
         }
     }
 }
