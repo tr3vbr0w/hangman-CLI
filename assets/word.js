@@ -16,7 +16,7 @@ var Word = function(newWord) {
     //This segment of the constructor sets 
     this.returnWord = function(){
         var word;
-        for (let i = 0; i < letterArr.length; i++) {
+        for (let i = 0; i < this.letterArr.length; i++) {
             word += this.letterArr[i].returnLetter();
         }
         return word;

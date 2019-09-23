@@ -9,7 +9,7 @@ var Letter = function(newLetter) {
         if(this.exists === true){
             return this.answer;
         } else {
-            return "_";
+            return "_ ";
         }
     }
     //This function takes input from inquirer, changes it to lowercase, and checks the value against the answer within the letter constructor. If the answer exists within the word, this.guessed is changed to true
